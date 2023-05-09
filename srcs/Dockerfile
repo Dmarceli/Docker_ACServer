@@ -3,7 +3,11 @@ FROM ubuntu:latest
 RUN apt-get update && \
     apt-get -y install \
         nano \
-        wget 
+        wget
+ 
+EXPOSE 9600/tcp
+EXPOSE 9600/upd
+EXPOSE 8081/tcp
 
 COPY ./conf/ .
 COPY ./tools/ .

@@ -3,8 +3,8 @@ FROM debian:buster
 RUN apt-get update && \
     apt-get -y install \
         nano \
-        lib32gcc1 \
-        zlib1g:i386 
+        wget \
+        git
 
 COPY ./conf/conf.sh .
 RUN chmod +777 conf.sh

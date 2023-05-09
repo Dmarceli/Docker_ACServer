@@ -1,14 +1,8 @@
 #!/bin/bash
 
-mkdir  ~/steam
+apt-get install -y lib32gcc1 
+apt-get install -y dotnet-sdk-7.0 
 
-cd ~/steam
-
-wget http://media.steampowered.com/client/steamcmd_linux.tar.gz
-
-tar -xvf steamcmd_linux.tar.gz
-rm steamcmd_linux.tar.gz
-
-./steamcmd.sh +@sSteamCmdForcePlatformType windows
+git clone https://github.com/compujuckel/AssettoServer.git && git checkout v0.0.51
 
 tail -500f /dev/null

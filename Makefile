@@ -25,6 +25,10 @@ status :
 	@echo "${GREEN}Listing Docker containers...${NC}"
 	@sudo docker ps -a
 
+bash :
+	@echo "${GREEN}Executing container's bash...${NC}"
+	@sudo docker exec -it ac_server_container bash
+
 fclean : stop clean
 
 re : clean all

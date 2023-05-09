@@ -1,12 +1,12 @@
-FROM debian:buster
+FROM ubuntu:latest
 
 RUN apt-get update && \
     apt-get -y install \
         nano \
-        wget \
-        git
+        wget 
 
-COPY ./conf/conf.sh .
+COPY ./conf/ .
+COPY ./tools/ .
 RUN chmod +777 conf.sh
 
 ENTRYPOINT [ "bash", "conf.sh" ]

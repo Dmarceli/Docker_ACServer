@@ -3,7 +3,7 @@ YELLOW=\033[1;33m
 RED=\033[1;31m
 NC=\033[0m
 
-all : build run
+all : build run log
 
 build : 
 	@echo "${GREEN}Building Docker image...${NC}"
@@ -29,6 +29,9 @@ bash :
 	@echo "${GREEN}Executing container's bash...${NC}"
 	@sudo docker exec -it ac_server_container bash
 
+log:
+	@sudo docker logs -f ac_server_container
+
 fclean : stop clean
 
-re : clean all
+re : fclean all

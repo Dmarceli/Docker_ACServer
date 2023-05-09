@@ -11,7 +11,7 @@ build :
 
 run :
 	@echo "${GREEN}Starting Docker container...${NC}"
-	@sudo docker run -p  8081:8081 --name ac_server_container -d ac_server_container
+	@sudo docker run -p 8081:8081 -p 9600:9600 --name ac_server_container -d ac_server_container
 
 stop : 
 	@echo "${YELLOW}Stopping Docker container...${NC}"

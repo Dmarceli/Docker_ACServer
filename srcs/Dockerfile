@@ -6,7 +6,7 @@ RUN apt-get update && \
         wget
  
 EXPOSE 9600/tcp
-EXPOSE 9600/upd
+EXPOSE 9600/udp
 EXPOSE 8081/tcp
 
 COPY ./conf/ .

@@ -13,4 +13,3 @@ apt-get upgrade -y
 cd server
 ./AssettoServer
 
-tail -500f /dev/null

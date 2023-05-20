@@ -3,7 +3,10 @@ YELLOW=\033[1;33m
 RED=\033[1;31m
 NC=\033[0m
 
-all : build run log
+all : files ai build run log
+
+no_ai: build run log
+
 
 build : files 
 	@echo "${GREEN}Building Docker image...${NC}"
@@ -37,7 +40,7 @@ files:
 		echo "$${GREEN}Copying server content...$${NC}"; \
 		./srcs/scripts/server_files_setup.sh "$${ZIP_NAME}"
 
-ai: build
+ai: 
 	@echo "${YELLOW}Adjusting AI preferences...${NC}"
 	@chmod +x ./srcs/scripts/modify_ai.sh
 	@./srcs/scripts/modify_ai.sh

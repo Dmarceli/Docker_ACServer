@@ -1,20 +1,17 @@
 #!/bin/bash
-while getopts zip: flag
-do
-    case "${flag}" in
-        zip) server_file_name=${OPTARG};;
-    esac
-done
 
 echo 'Cleaning temp folder...'
-rm  ../server_files/temp/*
+mkdir srcs/server_files/temp
 echo 'unzipping server files into temp'
-unzip $server_file_name ../server_files/temp/
+unzip srcs/server_files/$1 -d srcs/server_files/temp/
 echo 'Copying entry list to cfg...'
-cp  ../server_files/temp/cfg/entry_list.ini ../tools/server/cfg/
+cp  srcs/server_files/temp/cfg/entry_list.ini srcs/tools/server/cfg/
 echo 'Copying server details to cfg...'
-cp  ../server_files/temp/cfg/server_cfg.ini ../tools/server/cfg/
+cp  srcs/server_files/temp/cfg/server_cfg.ini srcs/tools/server/cfg/
 echo 'Copying csp_params to cfg...'
-cp  ../server_files/temp/cfg/csp_extra_options.ini ../tools/server/cfg/
+cp  srcs/server_files/temp/cfg/csp_extra_options.ini srcs/tools/server/cfg/
 echo 'Copying mods to server'
-cp -rf ../server_files/temp/content/* ../tools/server/content/
+cp -rf srcs/server_files/temp/content srcs/tools/server/
+echo 'Copying AC_server.exe to server'
+cp srcs/server_files/temp/acServer.exe srcs/tools/server
+rm -rf  srcs/server_files/temp

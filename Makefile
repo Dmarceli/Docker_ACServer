@@ -5,10 +5,10 @@ NC=\033[0m
 
 all : files ai build run log
 
-no_ai: build run log
+no_ai: files build run log
 
 
-build : files 
+build :
 	@echo "${GREEN}Building Docker image...${NC}"
 	@cd srcs && sudo docker build -t ac_server_container .
 

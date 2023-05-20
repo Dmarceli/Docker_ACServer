@@ -7,6 +7,7 @@ ZIP_PATH ?=
 all : build run log
 
 build : 
+	@files
 	@echo "${GREEN}Building Docker image...${NC}"
 	@cd srcs && sudo docker build -t ac_server_container .
 
@@ -35,7 +36,7 @@ log:
 
 files:
 	@./srcs/scripts/server_files_setup.sh -zip ${ZIP_PATH}
-	@@echo "${GREEN}Copying server content...${NC}"
+	@echo "${GREEN}Copying server content...${NC}"
 
 ai:
 	@./srcs/scripts/modify_ai.sh

@@ -32,6 +32,10 @@ bash :
 log:
 	@sudo docker logs -f ac_server_container
 
+ai:
+	@./srcs/modify_ai.sh
+	@echo "${GREEN}Adjusting AI preferences...${NC}"
+
 fclean : stop clean
 
 re : fclean all

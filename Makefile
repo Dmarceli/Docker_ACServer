@@ -45,8 +45,7 @@ ai:
 	@chmod +x ./srcs/scripts/modify_ai.sh
 	@./srcs/scripts/modify_ai.sh
 	@echo "${GREEN}Adjusted AI preferences...${NC}"
-	$(MAKE) run 
-	$(MAKE) log
+
 
 fclean : stop clean
 

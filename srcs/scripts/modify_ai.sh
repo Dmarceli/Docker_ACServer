@@ -39,3 +39,12 @@ while IFS= read -r line; do
 done < "$input_file"
 mv "$tmp_file" "$input_file"
 sed -i 's/EnableAi: false/EnableAi: true/' "$extra_cfg_file"
+
+source_folder="srcs/server_files/ai" 
+target_directory="srcs/tools/server/content/tracks/csp/"  
+
+first_subdir="$(find "$target_directory" -mindepth 1 -maxdepth 1 -type d | head -n 1)"
+
+if [ -n "$first_subdir" ]; then
+  cp -r "$source_folder" "$first_subdir"
+fi

@@ -37,9 +37,13 @@ files:
 		echo "$${GREEN}Copying server content...$${NC}"; \
 		./srcs/scripts/server_files_setup.sh "$${ZIP_NAME}"
 
-ai:
+ai: build
+	@echo "${YELLOW}Adjusting AI preferences...${NC}"
+	@chmod +x ./srcs/scripts/modify_ai.sh
 	@./srcs/scripts/modify_ai.sh
-	@echo "${GREEN}Adjusting AI preferences...${NC}"
+	@echo "${GREEN}Adjusted AI preferences...${NC}"
+	$(MAKE) run 
+	$(MAKE) log
 
 fclean : stop clean
 

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo 'Cleaning temp folder...'
+rm -rf srcs/tools/server/content/
 mkdir srcs/server_files/temp
 echo 'unzipping server files into temp'
 unzip srcs/server_files/$1 -d srcs/server_files/temp/
@@ -15,3 +16,4 @@ cp -rf srcs/server_files/temp/content srcs/tools/server/
 echo 'Copying AC_server.exe to server'
 cp srcs/server_files/temp/acServer.exe srcs/tools/server
 rm -rf  srcs/server_files/temp
+sed -i 's/EnableAi: true/EnableAi: false/' srcs/tools/server/cfg/extra_cfg.yml

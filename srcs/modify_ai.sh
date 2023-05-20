@@ -2,6 +2,7 @@
 
 input_file="srcs/tools/server/cfg/entry_list.ini"
 tmp_file="temp.txt"
+extra_cfg_file="srcs/tools/server/cfg/extra_cfg.yml"
 
 while IFS= read -r line; do
   if [[ $line == \[CAR_* ]]; then
@@ -36,5 +37,5 @@ while IFS= read -r line; do
     lines=() 
   fi
 done < "$input_file"
-
 mv "$tmp_file" "$input_file"
+sed -i 's/EnableAi: false/EnableAi: true/' "$extra_cfg_file"

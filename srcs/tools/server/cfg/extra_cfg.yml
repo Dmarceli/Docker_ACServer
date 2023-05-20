@@ -29,7 +29,7 @@ EnableWeatherFx: false
 # Reduce track grip when the track is wet. This is much worse than proper CSP rain physics but allows you to run clients with public/Patreon CSP at the same time
 RainTrackGripReductionPercent: 0
 # Enable AI traffic
-EnableAi: false
+EnableAi: true
 # List of plugins to enable
 EnablePlugins: []
 # Ignore some common configuration errors. More info: https://assettoserver.org/docs/common-configuration-errors

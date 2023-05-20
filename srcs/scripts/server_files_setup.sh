@@ -2,14 +2,14 @@
 while getopts zip: flag
 do
     case "${flag}" in
-        zip) server_file_names=${OPTARG};;
+        zip) server_file_name=${OPTARG};;
     esac
 done
 
 echo 'Cleaning temp folder...'
-rm  ../server_files/*
+rm  ../server_files/temp/*
 echo 'unzipping server files into temp'
-unzip $server_file_names ../server_files/temp/
+unzip $server_file_name ../server_files/temp/
 echo 'Copying entry list to cfg...'
 cp -r ../server_files/temp/cfg/entry_list.ini ../tools/server/cfg/
 echo 'Copying server details to cfg...'

@@ -2,6 +2,7 @@ GREEN=\033[1;32m
 YELLOW=\033[1;33m
 RED=\033[1;31m
 NC=\033[0m
+ZIP_PATH ?=
 
 all : build run log
 
@@ -32,8 +33,12 @@ bash :
 log:
 	@sudo docker logs -f ac_server_container
 
+files:
+	@./srcs/scripts/server_files_setup.sh -zip ${ZIP_PATH}
+	@@echo "${GREEN}Copying server content...${NC}"
+
 ai:
-	@./srcs/modify_ai.sh
+	@./srcs/scripts/modify_ai.sh
 	@echo "${GREEN}Adjusting AI preferences...${NC}"
 
 fclean : stop clean

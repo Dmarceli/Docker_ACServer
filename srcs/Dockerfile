@@ -3,7 +3,8 @@ FROM ubuntu:latest
 RUN apt-get update && \
     apt-get -y install \
         nano \
-        wget
+        wget \
+        unzip
  
 EXPOSE 9600/tcp
 EXPOSE 9600/udp

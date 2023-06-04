@@ -1,0 +1,5 @@
+*.zip
+acServer.exe
+entry_list.ini
+server_cfg.ini
+content/

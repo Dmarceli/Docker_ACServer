@@ -8,7 +8,7 @@ This project provides an easy and convenient way to run an Assetto Corsa server 
 - Open a terminal or command prompt and navigate to the project directory.
 - Drop your server files pack that you got from Content Manager into `srcs/server_files`
   - [How to Get Server Files](https://zap-hosting.com/guides/docs/assettocorsa-contentmanager/)
-  - If you want to set up AI in your server, drop your maps ai spline into `srcs/server_files/ai`
+  - If you want to set up AI in your server, drop your map's ai spline into `srcs/server_files/ai`
 - Run: `make` if you want AI options.
 - Run: `make no_ai` if you don't want AI options.
 - Run `make status` to check your container's status.

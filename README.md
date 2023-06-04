@@ -4,7 +4,7 @@ This project provides an easy and convenient way to run an Assetto Corsa server 
 ## How to run it
 
 - Clone this project repository.
-- Install Docker on your machine, if you haven't already.
+- Install Docker and make on your machine, if you haven't already.
 - Open a terminal or command prompt and navigate to the project directory.
 - Drop your server files pack that you got from Content Manager into `srcs/server_files`
   - [How to Get Server Files](https://zap-hosting.com/guides/docs/assettocorsa-contentmanager/)

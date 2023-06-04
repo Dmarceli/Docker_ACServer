@@ -13,3 +13,4 @@ This project provides an easy and convenient way to run an Assetto Corsa server 
 - Run: `make no_ai` if you don't want AI options.
 - Run `make status` to check your container's status.
 - Run `make clean` to shut down your container and clean the cache associated with it.
+- Run `make re` to restart your container 

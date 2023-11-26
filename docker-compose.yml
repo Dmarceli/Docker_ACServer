@@ -1,27 +1,28 @@
 version: '3'
 
 services:
-  assetto-corsa-server:
-    build:
-      context: .
-      dockerfile: AssettoCorsa_Server/Dockerfile
-    ports:
-      - "9600:9600"
-      - "8081:8081"
-    networks:
-      - assetto_network
+  # assetto-corsa-server:
+  #   build:
+  #     context: .
+  #     dockerfile: AssettoCorsa_Server/Dockerfile
+  #   ports:
+  #     - "9600:9600"
+  #     - "8081:8081"
+  #   networks:
+  #     - assetto_network
 
   ngrok:
     build:
       context: .
-      dockerfile: ngrok/Dockerfile
+      dockerfile: Ngrok/Dockerfile
     ports:
       - "4040:4040"
-    depends_on:
-      - assetto-corsa-server
+    # depends_on:
+    #   - assetto-corsa-server
     networks:
       - assetto_network
-
+    env_file:
+      - .env 
 networks:
   assetto_network:
     driver: bridge

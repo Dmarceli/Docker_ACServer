@@ -1,9 +1,16 @@
-FROM ngrok/ngrok:latest
+FROM debian:buster
 
-# Expose ngrok web interface port
+RUN apt-get update && \
+    apt-get -y install \
+        vim \
+        wget \
+        unzip
+
 EXPOSE 4040/tcp
 
-COPY ./conf/ .
-RUN chmod +777 conf.sh
+COPY ./Ngrok/conf/ .
 
-CMD ["bash", "setup.sh"]
+#RUN chmod +777 conf.sh
+
+ENTRYPOINT [ "tail", "-500f" ]
+
